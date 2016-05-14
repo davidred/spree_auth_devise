@@ -17,7 +17,6 @@ class Spree::UserRegistrationsController < Devise::RegistrationsController
 
   # POST /resource/sign_up
   def create
-    binding.pry
     @user = build_resource(spree_user_params)
     if verify_recaptcha(model: resource) && resource.save
       set_flash_message(:notice, :signed_up)
