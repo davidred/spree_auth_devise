@@ -17,8 +17,9 @@ class Spree::UserRegistrationsController < Devise::RegistrationsController
 
   # POST /resource/sign_up
   def create
+    binding.pry
     @user = build_resource(spree_user_params)
-    if resource.save
+    if verify_recaptcha(model: resource) && resource.save
       set_flash_message(:notice, :signed_up)
       sign_in(:spree_user, @user)
       session[:spree_user_signup] = true

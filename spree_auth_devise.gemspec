@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'json'
   s.add_dependency 'multi_json'
   s.add_dependency 'spree_core', spree_version
+  s.add_dependency 'recaptcha', '~> 1.3.0'
 
   s.add_development_dependency 'capybara', '~> 2.4.1'
   s.add_development_dependency 'coffee-rails', '~> 4.0.0'
